@@ -2,7 +2,7 @@ from os import listdir
 from os.path import isfile, join
 import re
 from fetch_meta_data import fetch
-from pref import leo312_perf
+from pref import leo_perf
 import json
 import time
 from regex import DVD_CODE_REGEX
@@ -25,7 +25,7 @@ def main():
     FILE_DIR = os.getenv('FILE_DIR')
     f = open("data.json", "a")
     data_stash = []
-    onlyfiles = list_file_in_dir(FILE_DIR, leo312_perf)
+    onlyfiles = list_file_in_dir(FILE_DIR, leo_perf)
     for file in onlyfiles:
         time.sleep(1)
         data_stash.append(fetch(file))
